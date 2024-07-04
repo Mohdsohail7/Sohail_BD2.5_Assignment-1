@@ -336,6 +336,11 @@ app.get('/products', (req, res) => {
 });
 
 let port = 8000;
+
+// home route
+app.get('/', (req, res) => {
+  res.send(`<h1>This is my <u>BD2.5 </u> Assignment-1</h1>`)
+});
 app.listen(port, () => {
   console.log("server is running on the port number is: " + port);
 })
