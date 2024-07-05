@@ -237,7 +237,7 @@ app.get('/products/sort/popularity', (req, res) => {
   let sortedProducts = products.slice();
   sortedProducts.sort(sortProductByPopularity);
 
-  res.json({Popularity: sortedProducts});
+  res.json({products: sortedProducts});
 });
 
 // function to sort products by high to low price
@@ -250,7 +250,7 @@ app.get('/products/sort/price-high-to-low', (req, res) => {
   let sortedProducts = products.slice();
   sortedProducts.sort(sortProductsByPrice);
 
-  res.json({sortedProducts: sortedProducts});
+  res.json({products: sortedProducts});
 });
 
 // function to sort products by low to high price
@@ -263,7 +263,7 @@ app.get('/products/sort/price-low-to-high', (req, res) => {
   let sortedProducts = products.slice();
   sortedProducts.sort(sortProductsByPriceLowToHigh);
 
-  res.json({sortedProducts: sortedProducts});
+  res.json({products: sortedProducts});
 });
 
 // function to sort product based on ram
@@ -277,7 +277,7 @@ app.get('/products/filter/ram', (req, res) => {
   let filterProduct = products.filter(productObj => filterByRam(productObj, ram));
 
  // console.log("filter---", filterProduct);
-  res.json({filterProduct: filterProduct});
+  res.json({products: filterProduct});
 });
 
 //function to sort product based on rom
@@ -291,7 +291,7 @@ app.get('/products/filter/rom', (req, res) => {
   let filterProduct = products.filter(productObj => filterByRom(productObj, rom));
 
  // console.log("filter---", filterProduct);
-  res.json({filterProduct: filterProduct});
+  res.json({products: filterProduct});
 });
 
 // function to filter product based on brand
@@ -304,7 +304,7 @@ app.get('/products/filter/brand', (req, res) => {
   let brand = req.query.brand;
   let result = products.filter(product => filterByBrand(product, brand));
 
-  res.json({brandProduct: result});
+  res.json({products: result});
 });
 
 // function to filter product based on Od
@@ -317,7 +317,7 @@ app.get('/products/filter/os', (req, res) => {
   let os = req.query.os;
   let result = products.filter(product => filterByOs(product, os));
 
-  res.json({osProduct: result});
+  res.json({products: result});
 });
 
 // function to filter product based on price
@@ -330,7 +330,7 @@ app.get('/products/filter/price', (req, res) => {
   let price = parseFloat(req.query.price);
   let result = products.filter(product => filterByPrice(product, price));
 
-  res.json({price: result});
+  res.json({products: result});
 });
 
 // Endpoint 8: Send original array of products
