@@ -335,7 +335,7 @@ app.get('/products/filter/price', (req, res) => {
 
 // Endpoint 8: Send original array of products
 app.get('/products', (req, res) => {
-  res.json({originalArray: products});
+  res.json({products: products});
 });
 
 let port = 8000;
